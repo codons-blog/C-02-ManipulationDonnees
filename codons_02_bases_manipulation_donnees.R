@@ -125,3 +125,18 @@ synthese3 <- summarise(croissance_gp,
                        total.croissance = sum(croissance),
                        moyenne.croissance = mean(croissance),
                        ecart.type.croissance = sd(croissance))
+
+# join() ----
+
+traitements <- read.csv2("traitements.csv")  # importer le fichier
+head(traitements)  # afficher les 6 premieres lignes
+
+expe <- left_join(croissance_long, traitements,  # tableau d'origine + tableau a joindre
+                  by = c("indiv" = "Indiv", "zone" = "Zone"))  # colonnes communes aux 2 tableaux
+
+expe2 <- merge(croissance_long, traitements,  # meme resultat en R basique
+               by.x = c("zone", "indiv"),
+               by.y = c("Zone", "Indiv"))
+
+boxplot(croissance ~ Treatment,
+        data = expe)
