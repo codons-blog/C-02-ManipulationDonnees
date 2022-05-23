@@ -21,16 +21,71 @@ str(croissance)  # affiche les types des variables
 croissance$Indiv  # affiche tous les elements de la variable Indiv
 length(unique(croissance$Indiv))  # nombre d'arbrisseaux dans le jeu de donnees
 
+# rename() ----
+
+croissance2 <- rename(croissance,
+                      zone = Zone,
+                      indiv = Indiv)
+
+croissance2 <- croissance %>% 
+  rename(zone = Zone,
+         indiv = Indiv)
+
+# select() ----
+
+# Conserver des colonnes
+
+croissance2_selection <- croissance2 %>% 
+  select(indiv, `2007`:`2012`)
+
+# Supprimer une colonne
+
+croissance2_selection <- croissance2 %>% 
+  select(-zone)
+
+# Renommer et modifier l'ordre de colonnes
+
+croissance2_selection <- croissance %>% 
+  select(zone = Zone, indiv = Indiv, `2007`:`2012`)
+
+# Meme chose avec la fonction everything
+
+croissance2_selection <- croissance %>% 
+  select(zone = Zone, indiv = Indiv, everything())
+
+# filter() ----
+
+# Conserver les observations pour les zones 2 et 3 et les individus dont les identifiants sont compris entre 350 et 450
+
+croissance2_filtre <- croissance2 %>% 
+  filter(zone %in% c(2, 3),
+         indiv %in% 350:450)
+
+# Autre possibilité avec la fonction between()
+
+croissance2_filtre <- croissance2 %>% 
+  filter(zone %in% c(2, 3),
+         between(indiv, 350, 450))
+
+# Selectionner l'individu n°603
+
+croissance2 %>% filter(indiv == 603)
+
+# Selectionner les zones 2, 3 et 4
+croissance2 %>% filter(zone <= 4)
+croissance2 %>% filter(!zone >= 5)
+
+# Selectionner les zones 2 et 7
+croissance2 %>% filter(zone == 2 | zone == 7)
+croissance2 %>% filter(zone %in% c(2, 7))
+
+# Selectionner les individus dans la zone 2 avec des identifiants entre 300 et 400
+croissance2 %>% filter(zone == 2, indiv %in% 300:400)
+croissance2 %>% filter(zone == 2, between(indiv, 300, 400))
+
+
 # Selectionner des donnees ----
 
-croissance[2, 5]  # 2e ligne et 5e colonne
-croissance[6, ]  # 6e ligne
-croissance[6, ]$Indiv  # contenu de la colonne Indiv pour la 6e ligne
-croissance[croissance$Indiv == 603, ]  # toutes les colonnes pour l'individu n°603
-
-croissance[croissance$Zone < 4, ]  # zones 2 et 3
-croissance[croissance$Zone <= 4, ]  # zones 2, 3 et 4
-croissance[!croissance$Zone >= 5, ]  # meme resultat
 
 croissance[croissance$Zone == 2 | croissance$Zone == 7, ]  # zones 2 et 7
 croissance[croissance$Zone == 2 & croissance$Indiv %in% c(300:400), ]  # zones 2 et individus 300 a 400
