@@ -175,16 +175,8 @@ expe <- croissance %>%
          annee = as.numeric(annee),
          traitement = as.factor(traitement))
 
-boxplot(croissance ~ traitement, data = expe)
-
-  
-expe
-
-
 # Boxplot de la croissance annuelle ----
 
-png("boxplot.png",
-    width = 1600, height = 600)
 
 boxplot(croissance ~ traitement, 
         data = expe,
@@ -192,10 +184,41 @@ boxplot(croissance ~ traitement,
         xlab = "Traitement",
         ylab = "Croissance des tiges (cm)")
 
-dev.off()
+# Defi ----
 
+# Importer les donnees
 
+dragons <- read_csv("https://raw.githubusercontent.com/codons-blog/C-02-ManipulationDonnees/main/dragons.csv")
 
+d1 <- dragons %>% 
+  rename(curcuma = paprika) %>% 
+  pivot_longer(cols = tabasco:curcuma,
+               names_to = "epice",
+               values_to = "flamme_cm") %>% 
+  mutate(flamme_cm = case_when(espece == "magyar_a_pointes" & epice == "tabasco" ~ flamme_cm - 30,
+                               TRUE ~ flamme_cm)) %>% 
+  mutate(flamme_m = flamme_cm / 100)
 
+magyar_a_pointes <- d1 %>% filter(espece == "magyar_a_pointes")
+suedois_a_museau_court <- d1 %>% filter(espece == "suedois_a_museau_court")
+vert_gallois <- d1 %>% filter(espece == "vert_gallois")
 
+par(mfrow = c(1, 3))
 
+boxplot(flamme_m ~ epice,
+        data = magyar_a_pointes,
+        xlab = "Epice",
+        ylab = "Longueur flamme (m)",
+        main = "Magyar à pointes")
+
+boxplot(flamme_m ~ epice,
+        data = suedois_a_museau_court,
+        xlab = "Epice",
+        ylab = "Longueur flamme (m)",
+        main = "Suédois à museau court")
+
+boxplot(flamme_m ~ epice,
+        data = vert_gallois,
+        xlab = "Epice",
+        ylab = "Longueur flamme (m)",
+        main = "Vert gallois")
