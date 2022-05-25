@@ -138,20 +138,20 @@ expe <- croissance %>%
 
 croissance_long <- croissance %>% 
   pivot_longer(cols = `2007`:`2012`,
-               names_to = "Annee",
-               values_to = "Croissance")
+               names_to = "annee",
+               values_to = "croissance")
 
 # pivot_wider() ----
 
 croissance_large <- croissance_long %>% 
   pivot_wider(id_cols = Zone:Indiv,
-              names_from = Annee,
-              values_from = Croissance)
+              names_from = annee,
+              values_from = croissance)
 
 # pipe ----
 
 croissance <- read_csv("https://raw.githubusercontent.com/codons-blog/C-02-ManipulationDonnees/main/croissance.csv")
-traitements <- read_csv2("https://raw.githubusercontent.com/codons-blog/C-02-ManipulationDonnees/main/traitements.csv")  # importer le fichier
+traitements <- read_csv2("https://raw.githubusercontent.com/codons-blog/C-02-ManipulationDonnees/main/traitements.csv")
 
 expe <- croissance %>% 
   pivot_longer(cols = `2007`:`2012`,
@@ -166,7 +166,7 @@ expe <- croissance %>%
          annee = as.numeric(annee),
          traitement = as.factor(traitement))
 
-# Boxplot de la croissance annuelle ----
+# Effet des traitements sur la croissance ----
 
 
 boxplot(croissance ~ traitement, 
@@ -181,7 +181,9 @@ boxplot(croissance ~ traitement,
 
 dragons <- read_csv("https://raw.githubusercontent.com/codons-blog/C-02-ManipulationDonnees/main/dragons.csv")
 
-d1 <- dragons %>% 
+# Nettoyer et corriger les donnees
+
+dragons_tidy <- dragons %>% 
   rename(curcuma = paprika) %>% 
   pivot_longer(cols = tabasco:curcuma,
                names_to = "epice",
@@ -190,9 +192,11 @@ d1 <- dragons %>%
                                TRUE ~ flamme_cm)) %>% 
   mutate(flamme_m = flamme_cm / 100)
 
-magyar_a_pointes <- d1 %>% filter(espece == "magyar_a_pointes")
-suedois_a_museau_court <- d1 %>% filter(espece == "suedois_a_museau_court")
-vert_gallois <- d1 %>% filter(espece == "vert_gallois")
+magyar_a_pointes <- dragons_tidy %>% filter(espece == "magyar_a_pointes")
+suedois_a_museau_court <- dragons_tidy %>% filter(espece == "suedois_a_museau_court")
+vert_gallois <- dragons_tidy %>% filter(espece == "vert_gallois")
+
+# Boxplots
 
 par(mfrow = c(1, 3))
 
