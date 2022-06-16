@@ -44,7 +44,7 @@ q3 <- d1[9:18, ] %>%
        aes(x = Intitule, y = Nombre)) +
   geom_col(width = 0.5, fill = "#66c1bf") +
   geom_text(aes(x = Intitule, y = Nombre + 0.3, label = Nombre),
-            colour = "#275662", size = 3) +
+            colour = "#275662", size = 3, hjust = 0.5) +
   coord_flip() +
   labs(title = "Parmi les items suivants, avec lesquels vous\nsentez-vous à l'aise à l'issue de cet atelier ?", 
        x = "", y = "") +
@@ -73,20 +73,22 @@ q4 <- d1[19:53, ] %>%
         axis.title.x = element_blank(),
         axis.text.y = element_text(colour = "#275662", size = 8)))
 
-p5 <- ggplot() +
+(p5 <- ggplot() +
   geom_text(aes(x = 0.5, y = 9.5, label = "Points positifs"), colour = "#275662", hjust = 0, size = 3) +
-  geom_text(aes(x = 0.5, y = 9, label = "- Format tutoriel / durée de l'atelier"), colour = "black", hjust = 0, size = 3) +
-  geom_text(aes(x = 0.5, y = 8.5, label = "- Ambiance constructive et bienveillante"), colour = "black", hjust = 0, size = 3) +
-  geom_text(aes(x = 0.5, y = 8, label = "- Disponibilité des animateurs"), colour = "black",  hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 9, label = "- Vision d'ensemble sur le package"), colour = "black", hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 8.5, label = "- Astuces (raccourcis clavier)"), colour = "black", hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 8, label = "- Disponibilité des animateurs"), colour = "black", hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 7.5, label = "- Ambiance, interactivité"), colour = "black",  hjust = 0, size = 3) +
   geom_text(aes(x = 0.5, y = 6, label = "Points à améliorer"), colour = "#275662", hjust = 0, size = 3) +
-  geom_text(aes(x = 0.5, y = 5.5, label = "- Passer plus de temps sur les bases de R"), colour = "black", hjust = 0, size = 3) +
-  geom_text(aes(x = 0.5, y = 5, label = "- Démonstrations au fur et à mesure"), colour = "black", hjust = 0, size = 3) +
-  geom_text(aes(x = 0.5, y = 4.5, label = "- Suivi plus personnalisé"), colour = "black",  hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 5.5, label = "- Prévoir le support au format pdf"), colour = "black", hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 5, label = "- Prévoir les fichiers en avance"), colour = "black", hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 4.5, label = "- Peut-être prévoir deux séances"), colour = "black", hjust = 0, size = 3) +
+  geom_text(aes(x = 0.5, y = 4, label = "- Venir avec ses  propres données"), colour = "black",  hjust = 0, size = 3) +
   xlim(0, 10) +
-  ylim(4, 10) +
-  theme_void()
+  ylim(3, 10) +
+  theme_void())
 
-p <- p1 + p2 + p3 + p4 + plot_spacer() + p5 +
+p <- p1 + p2 + p3 + p4 + p5 + plot_spacer() +
   plot_layout(ncol = 3) +
   plot_annotation(title = "Ateliers codons! - 02 - Manipuler des données avec le Tidyverse",
                   subtitle = "Lundi 09/05/2022",
