@@ -1,0 +1,54 @@
+Question;Intitule;Note;Nombre
+Avez-vous deja utilise le Tidyverse avant cet atelier ?;Tres regulierement;NA;1
+Avez-vous deja utilise le Tidyverse avant cet atelier ?;De temps en temps;NA;0
+Avez-vous deja utilise le Tidyverse avant cet atelier ?;Rarement ;NA;5
+Avez-vous deja utilise le Tidyverse avant cet atelier ?;Jamais;NA;6
+Cet atelier a-t-il repondu a vos attentes ?;Tout a fait;NA;8
+Cet atelier a-t-il repondu a vos attentes ?;Plutot oui;NA;4
+Cet atelier a-t-il repondu a vos attentes ?;Plutot non;NA;0
+Cet atelier a-t-il repondu a vos attentes ?;Pas du tout;NA;0
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;rename();NA;10
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;select();NA;12
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;filter();NA;11
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;arrange();NA;6
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;mutate();NA;8
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;group_by);NA;8
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;summarise();NA;7
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;join();NA;5
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;tidyr;NA;5
+Parmi les items suivants,  avec lequel(s) vous sentez-vous a l'aise a l'issue de cet atelier ?;pipe;NA;10
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Appreciation generale;1;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Appreciation generale;2;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Appreciation generale;3;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Appreciation generale;4;3
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Appreciation generale;5;9
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Format du support (aspect visuel);1;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Format du support (aspect visuel);2;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Format du support (aspect visuel);3;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Format du support (aspect visuel);4;2
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Format du support (aspect visuel);5;10
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Contenu du support (clarte des explications);1;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Contenu du support (clarte des explications);2;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Contenu du support (clarte des explications);3;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Contenu du support (clarte des explications);4;5
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Contenu du support (clarte des explications);5;7
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Exercices proposes (bien adaptes ?);1;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Exercices proposes (bien adaptes ?);2;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Exercices proposes (bien adaptes ?);3;1
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Exercices proposes (bien adaptes ?);4;5
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Exercices proposes (bien adaptes ?);5;6
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Duree de l'atelier;1;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Duree de l'atelier;2;1
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Duree de l'atelier;3;1
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Duree de l'atelier;4;3
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Duree de l'atelier;5;7
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Explications donnees par les animateurs;1;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Explications donnees par les animateurs;2;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Explications donnees par les animateurs;3;1
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Explications donnees par les animateurs;4;2
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Explications donnees par les animateurs;5;9
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Disponibilite des animateurs;1;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Disponibilite des animateurs;2;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Disponibilite des animateurs;3;0
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Disponibilite des animateurs;4;2
+Donnez une note aux items suivants entre 1 (tres mauvais) et 5 (tres bien);Disponibilite des animateurs;5;10
